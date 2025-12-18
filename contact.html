@@ -1,54 +1,122 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
   <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>ติดต่อเรา – LINE Company (Thailand)</title>
+    <title>ติดต่อเรา - LINE Company (Thailand)</title>
     <meta
       name="description"
-      content="หน้าติดต่อ LINE Company (Thailand) พร้อมข้อมูลอีเมล เบอร์โทร ที่อยู่บริษัท และแผนที่ Google Maps (จำลอง)"
+      content="หน้าติดต่อ LINE Company (Thailand) ข้อมูลที่อยู่ Gaysorn Tower เบอร์โทร และแผนที่"
     />
-
     <meta name="author" content="LINE Demo Project" />
-    <meta name="robots" content="index, follow" />
 
-    <meta property="og:title" content="ติดต่อเรา – LINE Company (Thailand)" />
-    <meta
-      property="og:description"
-      content="ข้อมูลการติดต่อบริษัท ตำแหน่งที่ตั้ง และแบบฟอร์มติดต่อของเว็บไซต์จำลอง LINE"
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
-    <meta property="og:type" content="website" />
   </head>
-
   <body>
-    <!-- ข้อมูลติดต่อ -->
-    <fieldset>
-      <legend>ข้อมูลติดต่อ</legend>
-      <p>Takeshi Idezawa</p>
-      <p>Email: Takeshi@linecorp.com</p>
-      <p>Tel: 00-214-5667</p>
-    </fieldset>
+    <nav class="nav-bar">
+      <div class="nav-links">
+        <a href="index.html">หน้าแรก</a>
+        <a href="about.html">เกี่ยวกับ</a>
+        <a href="services.html">บริการ</a>
+        <a href="contact.html" class="active">ติดต่อ</a>
+      </div>
+    </nav>
 
-    <!-- ที่อยู่ของบริษัท -->
-    <fieldset>
-      <legend>ที่อยู่บริษัท</legend>
-      <p>LINE Company (Thailand)</p>
-      <p>Gaysorn Tower, 127 ถนนราชดำริ แขวงปทุมวัน เขตปทุมวัน กรุงเทพฯ 10330</p>
-    </fieldset>
+    <div class="container page-content">
+      <header class="page-header">
+        <h1>ติดต่อเรา</h1>
+        <p>สอบถามข้อมูลเพิ่มเติม หรือติดต่อสำนักงานใหญ่ LINE Thailand</p>
+      </header>
 
-    <!-- Maps -->
-    <iframe
-      src="https://www.google.com/maps?q=LINE+Company+(Thailand)&output=embed"
-      width="50%"
-      height="350"
-      style="border: 0"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
-    >
-    </iframe>
+      <div class="contact-container">
+        <div class="contact-info">
+          <div style="text-align: center; margin-bottom: 20px">
+            <i
+              class="fas fa-map-marker-alt"
+              style="font-size: 50px; color: #06c755"
+            ></i>
+          </div>
 
-    <p>&copy; LINE 2025 เชื่อมต่อผู้คนและบริการเพื่อชีวิตดิจิทัลที่สะดวกขึ้น</p>
+          <fieldset class="info-box">
+            <legend>ผู้บริหาร (Contact Person)</legend>
+            <p><strong>Takeshi Idezawa</strong></p>
+            <p>
+              Email:
+              <a href="mailto:Takeshi@linecorp.com">Takeshi@linecorp.com</a>
+            </p>
+            <p>Tel: 02-xxx-xxxx (Office)</p>
+          </fieldset>
+
+          <fieldset class="info-box">
+            <legend>ที่อยู่บริษัท (Head Office)</legend>
+            <p><strong>LINE Company (Thailand) Limited</strong></p>
+            <p>
+              Gaysorn Tower, ชั้น 17<br />
+              127 ถนนราชดำริ แขวงปทุมวัน <br />
+              เขตปทุมวัน กรุงเทพฯ 10330
+            </p>
+          </fieldset>
+        </div>
+
+        <div class="contact-form-wrapper">
+          <h3>ส่งข้อความถึงเรา</h3>
+          <form action="#" method="post" class="contact-form">
+            <label for="name">ชื่อ-นามสกุล:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="ระบุชื่อของคุณ..."
+              required
+            />
+
+            <label for="email">อีเมล:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="example@email.com"
+              required
+            />
+
+            <label for="message">เรื่องที่ต้องการติดต่อ:</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              placeholder="พิมพ์ข้อความ..."
+              required
+            ></textarea>
+
+            <button type="submit" class="btn btn-primary">ส่งข้อความ</button>
+          </form>
+        </div>
+      </div>
+
+      <section class="map-section">
+        <h3>แผนที่ตั้งบริษัท</h3>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.667873427976!2d100.5385613148303!3d13.743542990352554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29ed0078b5a09%3A0x47087037e93751ea!2sGaysorn%20Tower!5e0!3m2!1sen!2sth!4v1620000000000!5m2!1sen!2sth"
+          width="100%"
+          height="400"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+        >
+        </iframe>
+      </section>
+    </div>
+
+    <footer id="footer">
+      <p>
+        &copy; LINE 2025 เชื่อมต่อผู้คนและบริการเพื่อชีวิตดิจิทัลที่สะดวกขึ้น
+      </p>
+    </footer>
+
+    <a href="#" class="btn-top">↑ Top</a>
   </body>
 </html>

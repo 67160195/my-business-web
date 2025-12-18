@@ -1,53 +1,137 @@
-# Create a LINE website
+# LINE Company (Thailand) Business Website
 
-## Project description
+## About the Project
 
-- นี่คือการจำลองหน้าเว็บไซต์ของ LINE Company (Thailand) เพื่อใช้เป็นโปรเจกต์ฝึกทักษะ
+This project is a responsive business website redesign for **LINE Company (Thailand)**. It showcases the company's mission "Closing the Distance", detailing its history, digital services, and business solutions. The project demonstrates modern HTML5 and CSS3 techniques, focusing on responsive design, grid layouts, and clean user interfaces using the brand's signature Green theme.
 
-- สร้างขึ้นเพื่อเรียนรู้การพัฒนาเว็บด้วย HTML พื้นฐาน (ไม่มี CSS/JavaScript)
+## Website Pages
 
-- เพื่อฝึกการแบ่งโครงสร้างหน้าเว็บ เช่น หน้าแรก เกี่ยวกับ บริการ ติดต่อ
+| Page     | Description                                          | Link                           |
+| -------- | ---------------------------------------------------- | ------------------------------ |
+| Home     | Hero section with app download buttons & highlights  | [index.html](index.html)       |
+| About    | Company story, mission/vision, and executive team    | [about.html](about.html)       |
+| Services | Service details and LINE OA pricing comparison table | [services.html](services.html) |
+| Contact  | Contact info, form, and Gaysorn Tower location map   | [contact.html](contact.html)   |
 
-- ข้อมูลบริษัท เนื้อหา เบอร์โทร และแผนที่ เป็น ข้อมูลจำลอง ใช้เพื่อการศึกษาเท่านั้น
+## File Structure
 
-- ไฟล์ทั้งหมดสามารถเปิดได้ในเว็บเบราว์เซอร์ทั่วไป
+```
+my-business-web/
+├── index.html
+├── about.html
+├── services.html
+├── contact.html
+├── css/
+│   └── styles.css
+├── images/
+│   └── ...
+└── README.md
+```
 
-## File structure
+## CSS Implementation
 
-- index.html – หน้าแรกของเว็บไซต์ พร้อม Hero section และบริการเด่นของ LINE
+### Selectors
 
-- about.html – หน้าเกี่ยวกับบริษัท มีเรื่องราวของ LINE, Mission, Vision และทีมงาน
+| Type         | Examples                                  | Usage                                 |
+| ------------ | ----------------------------------------- | ------------------------------------- |
+| Universal    | `*`                                       | Reset margin, padding, box-sizing     |
+| Element      | `body`, `h1`, `h2`, `img`, `a`            | Base typography and responsiveness    |
+| Class        | `.container`, `.card`, `.btn`, `.nav-bar` | Reusable components and layout        |
+| ID           | `#Header`, `#footer`, `#mission-vision`   | Unique page sections                  |
+| Pseudo-class | `:hover`, `:active`, `:nth-child(even)`   | Interactive states and table striping |
 
-- services.html – หน้าบริการ แสดงรายละเอียดบริการต่าง ๆ ของ LINE เช่น LINE Chat, LINE OA, LINE Pay
+### CSS Units
 
-- contact.html – หน้าติดต่อ มีข้อมูลบริษัทจำลอง, อีเมล, เบอร์โทร และแผนที่ Google Maps (ตำแหน่ง LINE Thailand)
+| Unit  | Usage                                              |
+| ----- | -------------------------------------------------- |
+| `px`  | Borders, box-shadows, fixed spacing                |
+| `rem` | Font sizes, margins, paddings (Responsive scaling) |
+| `%`   | Container widths, fluid images                     |
+| `vh`  | Hero section height (min-height)                   |
+| `fr`  | Grid fractions for flexible column layouts         |
 
-- images/ – โฟลเดอร์เก็บภาพที่ใช้ในโปรเจกต์ (โลโก้/สกรีนช็อต)
+### Color Palette
 
-- README.md – เอกสารอธิบายโปรเจกต์ (ไฟล์นี้)
+| Color      | Hex Code  | Usage                                  |
+| ---------- | --------- | -------------------------------------- |
+| LINE Green | `#06C755` | Headers, Primary Buttons, Links, Icons |
+| Dark Green | `#05b34c` | Button Hover States                    |
+| Black      | `#1E1E1E` | Primary Headings, Footer Background    |
+| Light Gray | `#F5F8FA` | Page Background                        |
+| White      | `#ffffff` | Cards, Navbar, Content Areas           |
 
-## All screenshots and links to each page
+### Typography
 
-### 1. หน้าแรก (Home)
+- **Font Family:** "Prompt", "Segoe UI", Tahoma, sans-serif
+- **Font Weights:** 400 (regular), 600 (semi-bold), 700 (bold)
+- **Line Height:** 1.6 (readability)
+- **Text Effects:** `text-align: center` (Headings), `text-shadow` (Hero section)
 
-[คลิกเพื่อดูหน้าแรก](./index.html)
+### Box Model
 
-[![คลิกเพื่อดูหน้าแรก](images/index-screenshot.webp)](./index.html)
+- **Padding:** Used for inner spacing in cards, buttons, and sections
+- **Margin:** Spacing between sections and elements
+- **Border:** Input fields, table cells, team images (Green border)
+- **Border-radius:** Rounded corners (15px for cards, 30px for buttons)
 
-### 2. หน้าเกี่ยวกับเรา (About)
+### Positioning & Layout
 
-[คลิกเพื่อดูเกี่ยวกับ](./about.html)
+| Property             | Usage                              |
+| -------------------- | ---------------------------------- |
+| `position: sticky`   | Navigation bar stays at top        |
+| `position: fixed`    | Back-to-top button and Chat widget |
+| `position: absolute` | Overlay elements (if used)         |
+| `position: relative` | Parent container for Hero section  |
 
-[![คลิกเพื่อดูเกี่ยวกับ](images/about-screenshot.webp)](./about.html)
+### Display & Layout Systems
 
-### 3. หน้าบริการ (Services)
+| System                  | Usage                                              |
+| ----------------------- | -------------------------------------------------- |
+| `display: flex`         | Navigation menu, contact form layout, footer       |
+| `display: grid`         | Services grid (Cards), Team grid, Mission/Vision   |
+| `grid-template-columns` | `repeat(auto-fit, minmax(...))` for responsiveness |
+| `justify-content`       | Centering navigation items                         |
+| `gap`                   | Spacing between grid/flex items                    |
 
-[คลิกเพื่อดูบริการ](./services.html)
+### Hover & Interaction Effects
 
-[![คลิกเพื่อดูบริการ](images/services-screenshot.webp)](./services.html)
+| Effect           | CSS Properties                                             |
+| ---------------- | ---------------------------------------------------------- |
+| Button hover     | Color change, `transform: scale(1.05)`, shadow             |
+| Card/Image hover | `transform: translateY(-10px)`, `box-shadow` (Glow effect) |
+| Link active      | `border-bottom` highlight for current page                 |
+| Animations       | Keyframes `@slideInUp` for Hero text load                  |
+| Smooth Scroll    | `scroll-behavior: smooth` for "Top" button                 |
 
-### 4. หน้าติดต่อ (Contact)
+### Responsive Design
 
-[คลิกเพื่อดูติดต่อ](./contact.html)
+| Breakpoint         | Changes                                               |
+| ------------------ | ----------------------------------------------------- |
+| `Max-width: 600px` | Stack navigation, single column grids, adjust padding |
+| Mobile View        | Adjust font sizes, vertical layouts for contact form  |
 
-[![คลิกเพื่อดูติดต่อ](images/contact-screenshot.webp)](./contact.html)
+---
+
+## Screenshots
+
+_(Place your screenshots in the 'images' folder and update paths below)_
+
+### Home Page
+
+![Home Page](images/screenshot-home.png)
+
+### About Page
+
+![About Page](images/screenshot-about.png)
+
+### Services Page
+
+![Services Page](images/screenshot-services.png)
+
+### Contact Page
+
+![Contact Page](images/screenshot-contact.png)
+
+---
+
+© 2025 LINE Company (Thailand). All rights reserved.

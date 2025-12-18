@@ -1,0 +1,440 @@
+@import url("https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&family=Roboto:wght@400;500;700&display=swap");
+
+/* =========================================
+   1. RESET & GLOBAL STYLES (ธีม LINE GREEN)
+   ========================================= */
+:root {
+  --line-green: #06c755; /* สีเขียวหลัก LINE */
+  --line-dark-green: #05b34c; /* เขียวเข้ม (Hover) */
+  --text-black: #1e1e1e; /* สีดำตัวหนังสือ */
+  --bg-gray: #f5f8fa; /* สีพื้นหลังเทาอ่อน */
+  --white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Prompt", "Segoe UI", Tahoma, sans-serif; /* เปลี่ยนฟอนต์ให้ดูทันสมัย */
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-gray);
+  color: var(--text-black);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* =========================================
+   2. TYPOGRAPHY
+   ========================================= */
+h1,
+h2,
+h3 {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--text-black);
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: var(--line-green); /* หัวข้อใหญ่สีเขียว */
+  text-align: center;
+  letter-spacing: -1px;
+}
+
+h2 {
+  font-size: 2rem;
+  border-bottom: 3px solid var(--line-green); /* ขีดเส้นใต้สีเขียว */
+  padding-bottom: 10px;
+  margin-top: 30px;
+  display: inline-block; /* เส้นใต้เท่าตัวอักษร */
+}
+
+p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #444;
+}
+
+a {
+  color: var(--line-green);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: var(--line-dark-green);
+}
+
+/* =========================================
+   3. LAYOUT & CONTAINERS
+   ========================================= */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* =========================================
+   4. NAVIGATION BAR (Sticky Menu)
+   ========================================= */
+.nav-bar {
+  background-color: var(--white);
+  padding: 15px 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  border-bottom: 1px solid #eee;
+}
+
+.nav-bar a {
+  color: #555;
+  margin: 0 20px;
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+
+.nav-bar a:hover,
+.nav-bar a.active {
+  color: var(--line-green);
+  font-weight: 700;
+  border-bottom: 3px solid var(--line-green);
+  padding-bottom: 5px;
+  text-decoration: none;
+}
+
+/* =========================================
+   5. HEADER & HERO SECTION
+   ========================================= */
+#Header {
+  background-color: #000000; /* Header บนสุดสีดำ ตัดกับโลโก้ */
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#Header img {
+  width: 150px; /* ขนาดโลโก้ */
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  min-height: 80vh; /* ลดความสูงลงนิดหน่อย */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  /* ใส่ภาพพื้นหลัง LINE theme (สมมติ) หรือใช้ Gradient เขียว */
+  background: linear-gradient(135deg, #06c755 0%, #21d467 100%);
+  color: white;
+  text-align: center;
+  border-radius: 0 0 50px 50px; /* ทำขอบโค้งมนด้านล่าง */
+  margin-top: -1px;
+}
+
+.hero article {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 50px;
+  border-radius: 20px;
+  max-width: 800px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  color: #333;
+  animation: slideInUp 1s ease-out;
+}
+
+.hero h2 {
+  font-size: 3rem;
+  color: var(--line-green);
+  border: none;
+  margin-bottom: 20px;
+}
+
+.hero ul {
+  list-style: none; /* เอาจุด bullet ออก */
+}
+
+/* =========================================
+   6. COMPONENTS (Cards, Buttons)
+   ========================================= */
+/* --- Cards --- */
+.card {
+  background-color: white;
+  padding: 30px;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(6, 199, 85, 0.2); /* เงาสีเขียวจางๆ */
+}
+
+.card i {
+  font-size: 2.5rem;
+  color: var(--line-green);
+  margin-bottom: 20px;
+}
+
+/* --- Buttons --- */
+.btn,
+.btn-primary {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: var(--line-green);
+  color: white;
+  border: none;
+  border-radius: 30px; /* ปุ่มมน */
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(6, 199, 85, 0.3);
+}
+
+.btn:hover,
+.btn-primary:hover {
+  background-color: var(--line-dark-green);
+  transform: scale(1.05);
+  color: white;
+  text-decoration: none;
+}
+
+.btn-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #333;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 50%;
+  z-index: 50;
+  text-decoration: none;
+}
+
+.chat-widget {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  background-color: var(--line-green);
+  color: white;
+  padding: 15px 25px;
+  border-radius: 30px;
+  cursor: pointer;
+  z-index: 50;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+}
+
+/* =========================================
+   7. GRIDS & PAGE SECTIONS
+   ========================================= */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+/* Team Section */
+.team {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.team-member {
+  background-color: white;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.team-member img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto 15px auto;
+  border: 4px solid var(--line-green); /* กรอบรูปสีเขียว */
+}
+
+/* Mission / Vision Cards */
+.mv-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.mv-card {
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  border-top: 5px solid var(--line-green); /* แถบสีเขียวด้านบน */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.quote {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--line-green);
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+/* =========================================
+   8. FORMS & TABLES
+   ========================================= */
+/* Table */
+.table-responsive {
+  overflow-x: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.service-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  min-width: 600px;
+}
+
+.service-table th {
+  background-color: var(--line-green);
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+
+.service-table td {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+}
+
+.service-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Contact Layout */
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.contact-info,
+.contact-form-wrapper {
+  flex: 1;
+  min-width: 300px;
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-family: inherit;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--line-green);
+  box-shadow: 0 0 0 3px rgba(6, 199, 85, 0.2);
+}
+
+.info-box {
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.info-box legend {
+  color: var(--line-green);
+  font-weight: bold;
+  padding: 0 10px;
+}
+
+/* =========================================
+   9. FOOTER
+   ========================================= */
+#footer {
+  background-color: #1e1e1e; /* Footer สีดำด้าน */
+  color: #888;
+  padding: 40px 20px;
+  margin-top: 60px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+#footer p {
+  color: #888;
+  margin: 0;
+}
+
+/* Animation */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+  .hero h2 {
+    font-size: 2rem;
+  }
+  .nav-bar a {
+    margin: 0 10px;
+    font-size: 0.9rem;
+  }
+  .contact-container {
+    flex-direction: column;
+  }
+}
