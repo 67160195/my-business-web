@@ -118,19 +118,19 @@ _(Place your screenshots in the 'images' folder and update paths below)_
 
 ### Home Page
 
-![Home Page](images/screenshot-home.png)
+![Home Page](images/screenshot-home.webp)
 
 ### About Page
 
-![About Page](images/screenshot-about.png)
+![About Page](images/screenshot-about.webp)
 
 ### Services Page
 
-![Services Page](images/screenshot-services.png)
+![Services Page](images/screenshot-services.webp)
 
 ### Contact Page
 
-![Contact Page](images/screenshot-contact.png)
+![Contact Page](images/screenshot-contact.webp)
 
 ---
 
